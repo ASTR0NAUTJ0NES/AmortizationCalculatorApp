@@ -11,3 +11,23 @@ button {
 .custom-card {
     margin: 20px auto;
 }
+.title-text {
+    color: #4e73df;
+    font-size: 7rem;
+    line-height: 5.75rem;
+}
+.image-size{
+    max-height: 15rem;
+    padding-top: 3rem;
+}
+.btn-landing {
+    color: white !important;
+    min-width: 7rem;
+}
+.main-image{
+    max-height: 45rem;
+}
+.body-padding{
+    padding-left: 3rem;
+    padding-right: 3rem; 
+}

@@ -67,7 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Icons\budget.png" />
+    <Content Include="Icons\Calc.png" />
+    <Content Include="Icons\cash.png" />
     <Content Include="Icons\MLC.png" />
+    <Content Include="Icons\refugees.jpg" />
     <Content Include="LandingPage.html" />
     <Content Include="css\Custom.css" />
     <Content Include="dashboard.html" />
