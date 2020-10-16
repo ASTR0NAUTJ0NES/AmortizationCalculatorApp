@@ -110,7 +110,7 @@
                     </div>
                 </div>
             </li>
-            
+
 
         </ul>
 
@@ -121,6 +121,15 @@
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
             <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </nav>
+                <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid text-center">
                     <div class="row">
@@ -140,7 +149,7 @@
                         <div class="col">
                             <button type="button" class="collapseThis successBg">Payment Calculations</button>
                             <div class="content">
-                            <pre>
+                                <pre>
 <code class="language-js line-numbers">function formatMoney(number, decPlaces, decSep, thouSep) {
     decPlaces = isNaN(decPlaces = Math.abs(decPlaces)) ? 2 : decPlaces,
     decSep = typeof decSep === "undefined" ? "." : decSep;
@@ -287,7 +296,7 @@ document.getElementById('inputInterest').addEventListener('keypress', function (
                 });
             }
         </script>
-       
+
 </body>
 
 </html>
