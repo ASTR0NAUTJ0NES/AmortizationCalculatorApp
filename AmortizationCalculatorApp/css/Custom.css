@@ -31,8 +31,7 @@ button {
     padding-left: 3rem;
     padding-right: 3rem; 
 }
-.collapseThis {
-    background-color: #1cc88a;
+.collapseThis {   
     color: white;
     cursor: pointer;
     padding: 18px;
@@ -41,16 +40,21 @@ button {
     text-align: center;
     outline: none;
     font-size: 2.1rem;
+    outline: thick 2px black;
 }
-
-    .active, .collapseThis:hover {
-        background-color: #159465;
-    }
-
 .content {
     padding: 0 18px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     background-color: #f1f1f1;
+}
+.successBg {
+    background-color: #1cc88a;
+}
+.active, .successBg:hover, .warningBg:hover{
+    filter: brightness(85%);
+}
+.warningBg {
+    background-color: #f6c23e;
 }

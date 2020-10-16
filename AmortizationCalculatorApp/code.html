@@ -138,7 +138,7 @@
                     <hr />
                     <div class="row">
                         <div class="col">
-                            <button type="button" class="collapseThis">Payment Calculations</button>
+                            <button type="button" class="collapseThis successBg">Payment Calculations</button>
                             <div class="content">
                             <pre>
 <code class="language-js line-numbers">function formatMoney(number, decPlaces, decSep, thouSep) {
@@ -199,9 +199,44 @@ function calculate() {
                                 </code>
 </pre>
                             </div>
-                            <button type="button" class="collapseThis">Input Validation</button>
+                            <button type="button" class="collapseThis warningBg">Input Validation</button>
                             <div class="content">
+                                <pre>
+<code class="language-js line-numbers">document.getElementById('inputTerm').addEventListener('keypress', function (evt) {
+    let char = evt.which;
 
+    if (char >= 48 && char <= 57 || char == 46 || char == 44 ) {
+        return true;
+    }
+    else {
+        evt.preventDefault();
+        return false;
+    }
+});
+document.getElementById('inputLoan').addEventListener('keypress', function (evt) {
+    let char = evt.which;
+
+    if (char >= 48 && char <= 57 || char == 46 || char == 44) {
+        return true;
+    }
+    else {
+        evt.preventDefault();
+        return false;
+    }
+});
+document.getElementById('inputInterest').addEventListener('keypress', function (evt) {
+    let char = evt.which;
+
+    if (char >= 48 && char <= 57 || char == 46 || char == 44) {
+        return true;
+    }
+    else {
+        evt.preventDefault();
+        return false;
+    }
+});
+                                    </code>
+</pre>
                             </div>
                         </div>
                     </div>
