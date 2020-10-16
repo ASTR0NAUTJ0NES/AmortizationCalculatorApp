@@ -75,6 +75,7 @@ function calculate() {
 		for (let i = 1; i <= term; i++) {
 			tableOut += '<tr>';
 			tableOut += `<td>${i}</td>`
+			tableOut += `<td>`
         }
 	}
 
