@@ -69,6 +69,10 @@
   <ItemGroup>
     <Content Include="css\Custom.css" />
     <Content Include="dashboard.html" />
+    <Content Include="Icons\Github.png" />
+    <Content Include="Icons\Home.png" />
+    <Content Include="Icons\Navi.png" />
+    <Content Include="Icons\portfolio.png" />
     <Content Include="index.html" />
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\sb-admin-2.min.css" />
