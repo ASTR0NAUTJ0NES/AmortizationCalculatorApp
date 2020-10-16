@@ -1,4 +1,6 @@
-﻿
+﻿.welcome {
+    margin-top: 50px;
+}
 .input-section {
     padding-top: 0;
    
@@ -9,8 +11,8 @@
     font-size: 1.5rem;
 }*/
 input {
-    max-width: 300px;
-    margin: 0 auto;
+    max-width: 500px;
+    margin: 0 auto 18px auto;
 }
 button {
     margin: 20px 5px;
@@ -21,6 +23,7 @@ button {
 }
 .custom-card {
     margin: 20px auto;
+   
 }
 .payments-card {
     margin: 20px auto;
