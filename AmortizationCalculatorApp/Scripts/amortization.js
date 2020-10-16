@@ -42,20 +42,27 @@ document.getElementById("inputLoan").addEventListener("focusout", function () {
 
 // do calculations when user submits data
 function calculate() {
+
 	let loanAmount = parseFloat(document.getElementById("inputLoan").value);
 	let term = parseInt(document.getElementById("inputTerm").value);
 	let interestRate = parseFloat(document.getElementById("inputInterest").value);
 
-	// outputting total cost
-	document.getElementById("totalCostSpan").innerHTML = `$${formatMoney(totalCost(monthlyInterestRate(interestRate), loanAmount, term), 2, ".", ",")}`;
+	if (isNaN(loanAmount) || isNaN(term) || isNaN(interestRate)) {
+		alert("Your inputs cannot be blank!");
+	} else {
+		// outputting total cost
+		document.getElementById("totalCostSpan").innerHTML = `$${formatMoney(totalCost(monthlyInterestRate(interestRate), loanAmount, term), 2, ".", ",")}`;
 
-	// outputting total interest
-	document.getElementById("totalInterestSpan").innerHTML = `$${formatMoney(totalInterest(totalCost(monthlyInterestRate(interestRate), loanAmount, term), loanAmount), 2, ".", ",")}`;
+		// outputting total interest
+		document.getElementById("totalInterestSpan").innerHTML = `$${formatMoney(totalInterest(totalCost(monthlyInterestRate(interestRate), loanAmount, term), loanAmount), 2, ".", ",")}`;
 
-	// outputting monthly payment
-	document.getElementById("monthlyPaymentSpan").innerHTML = `$${formatMoney(monthlyPayment(totalCost(monthlyInterestRate(interestRate), loanAmount, term), term), 2, ".", ",")}`;
+		// outputting monthly payment
+		document.getElementById("monthlyPaymentSpan").innerHTML = `$${formatMoney(monthlyPayment(totalCost(monthlyInterestRate(interestRate), loanAmount, term), term), 2, ".", ",")}`;
 
-	document.getElementById("loanOutput").innerHTML = `$${loanAmount}`;
-	document.getElementById("termOutput").innerHTML = `${term}`;
-	document.getElementById("interestOutput").innerHTML = `${interestRate}%`;
+		document.getElementById("loanOutput").innerHTML = `$${loanAmount}`;
+		document.getElementById("termOutput").innerHTML = `${term}`;
+		document.getElementById("interestOutput").innerHTML = `${interestRate}%`;
+    }
+
+	
 }
