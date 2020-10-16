@@ -1,27 +1,13 @@
-﻿
-.input-section {
-    padding-top: 0;
-   
-    /*border: solid 1px red;*/
-}
-/*label {
-    margin-top: 10px;
-    font-size: 1.5rem;
-}*/
-input {
+﻿input {
     max-width: 300px;
-    margin: 0 auto;
+    margin: 0 auto 18px auto;
 }
 button {
     margin: 20px 5px;
 }
 .output-section {
     padding: 0 10px;
-    /*border: solid 1px red;*/
 }
 .custom-card {
-    margin: 20px auto;
-}
-.payments-card {
     margin: 20px auto;
 }
