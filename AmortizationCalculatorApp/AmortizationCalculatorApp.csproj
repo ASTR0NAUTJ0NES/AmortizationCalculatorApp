@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="code.html" />
+    <Content Include="css\prism.css" />
     <Content Include="Icons\budget.png" />
     <Content Include="Icons\Calc.png" />
     <Content Include="Icons\cash.png" />
@@ -93,6 +95,7 @@
     <Content Include="register.html" />
     <Content Include="Scripts\amortization.js" />
     <Content Include="Scripts\Inputs.js" />
+    <Content Include="Scripts\prism.js" />
     <Content Include="vendor\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="vendor\bootstrap\js\bootstrap.js" />
