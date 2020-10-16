@@ -56,18 +56,28 @@ function calculate() {
 		})
 	} else {
 		// outputting total cost
-		document.getElementById("totalCostSpan").innerHTML = `$${formatMoney(totalCost(monthlyInterestRate(interestRate), loanAmount, term), 2, ".", ",")}`;
-
+		let tCost = `$${formatMoney(totalCost(monthlyInterestRate(interestRate), loanAmount, term), 2, ".", ",")}`;
+		document.getElementById("totalCostSpan").innerHTML = tCost;
 		// outputting total interest
-		document.getElementById("totalInterestSpan").innerHTML = `$${formatMoney(totalInterest(totalCost(monthlyInterestRate(interestRate), loanAmount, term), loanAmount), 2, ".", ",")}`;
+		let tInterest = `$${formatMoney(totalInterest(totalCost(monthlyInterestRate(interestRate), loanAmount, term), loanAmount), 2, ".", ",")}`;
+		document.getElementById("totalInterestSpan").innerHTML = tInterest;
 
 		// outputting monthly payment
-		document.getElementById("monthlyPaymentSpan").innerHTML = `$${formatMoney(monthlyPayment(totalCost(monthlyInterestRate(interestRate), loanAmount, term), term), 2, ".", ",")}`;
+		let mPayment = `$${formatMoney(monthlyPayment(totalCost(monthlyInterestRate(interestRate), loanAmount, term), term), 2, ".", ",")}`
+		document.getElementById("monthlyPaymentSpan").innerHTML = mPayment;
 
 		document.getElementById("loanOutput").innerHTML = `$${loanAmount}`;
 		document.getElementById("termOutput").innerHTML = `${term}`;
 		document.getElementById("interestOutput").innerHTML = `${interestRate}%`;
-    }
+
+		let tableOut = "";
+		//Loop to fill the table
+		for (let i = 1; i <= term; i++) {
+			tableOut += '<tr>';
+			tableOut += `<td>${i}</td>`
+        }
+	}
+
 
 	
 }
