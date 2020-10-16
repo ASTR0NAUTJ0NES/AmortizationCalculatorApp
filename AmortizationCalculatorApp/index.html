@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -72,6 +73,7 @@
                 </div>
             </li>
 
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -134,9 +136,9 @@
                     <div class="card shadow custom-card">
                         
                         <div class="card-body">
-                            <label class="text-s font-weight-bold text-success text-uppercase mb-1">Loan Amount</label>
+                            <label class="text-s font-weight-bold text-primary text-uppercase mb-1">Loan Amount</label>
                                 <input class="form-control" type="text" autocomplete="off" placeholder="Enter loan amount" id="num1">
-                            <label class="text-s font-weight-bold text-danger text-uppercase mb-1">Term (Months)</label>
+                            <label class="text-s font-weight-bold text-success text-uppercase mb-1">Term (Months)</label>
                                 <input class="form-control" type="text" autocomplete="off" placeholder="Enter loan term " id="num2">
                             <label class="text-s font-weight-bold text-primary text-uppercase mb-1">Interest Rate</label>
                                 <input class="form-control" type="text" autocomplete="off" placeholder="Enter interest rate" id="num3">
@@ -146,6 +148,17 @@
                         </div>
                     </div>
 
+                    <!--<label>Loan Amount</label>
+    <input class="form-control" type="text" autocomplete="off" placeholder="Enter loan amount" id="num1">
+    <label>Term (Months)</label>
+    <input class="form-control" type="text" autocomplete="off" placeholder="Enter loan term " id="num2">
+    <label>Interest Rate</label>
+    <input class="form-control" type="text" autocomplete="off" placeholder="Enter interest rate" id="num3">
+
+    <button class="btn btn-danger" onclick="reset()">Clear</button>
+    <button class="btn btn-primary" onclick="submit()">Submit</button>-->
+
+
                 </div>
 
 
@@ -153,12 +166,12 @@
                     <div class="col output-section">
                         <!-- Total principal card -->
                         <div class="col custom-card">
-                            <div class="card bg-gradient-success shadow h-100 py-2">
+                            <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Principal</div>
-                                            <div class="h5 mb-0 font-weight-bold text-white">$40,000</div>
+                                            <div class="text-s font-weight-bold text-primary text-uppercase mb-1">Total Principal</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -170,12 +183,12 @@
 
                         <!-- Total interest card -->
                         <div class="col custom-card">
-                            <div class="card bg-gradient-danger shadow h-100 py-2">
+                            <div class="card border-left-success shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Interest</div>
-                                            <div class="h5 mb-0 font-weight-bold text-white">$215,000</div>
+                                            <div class="text-s font-weight-bold text-success text-uppercase mb-1">Total Interest</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -187,12 +200,12 @@
 
                         <!-- Total cost card -->
                         <div class="col custom-card">
-                            <div class="card bg-gradient-primary shadow h-100 py-2">
+                            <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Cost</div>
-                                            <div class="h5 mb-0 font-weight-bold text-white">$40,000</div>
+                                            <div class="text-s font-weight-bold text-primary text-uppercase mb-1">Total Cost</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -278,13 +291,6 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-
-            <!-- Page level plugins -->
-            <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-            <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-            <!-- Page level custom scripts -->
-            <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 
