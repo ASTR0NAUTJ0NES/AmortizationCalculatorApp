@@ -48,7 +48,12 @@ function calculate() {
 	let interestRate = parseFloat(document.getElementById("inputInterest").value);
 
 	if (isNaN(loanAmount) || isNaN(term) || isNaN(interestRate)) {
-		alert("Your inputs cannot be blank!");
+		Swal.fire({
+			title: 'Error!',
+			text: 'Inputs can not be blank',
+			icon: 'warning',
+			confirmButtonText: 'Back'
+		})
 	} else {
 		// outputting total cost
 		document.getElementById("totalCostSpan").innerHTML = `$${formatMoney(totalCost(monthlyInterestRate(interestRate), loanAmount, term), 2, ".", ",")}`;
