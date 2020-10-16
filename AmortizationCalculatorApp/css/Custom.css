@@ -1,1 +1,13 @@
-﻿
+﻿input {
+    max-width: 300px;
+    margin: 0 auto 18px auto;
+}
+button {
+    margin: 20px 5px;
+}
+.output-section {
+    padding: 0 10px;
+}
+.custom-card {
+    margin: 20px auto;
+}
