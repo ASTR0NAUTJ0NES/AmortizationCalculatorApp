@@ -113,11 +113,10 @@
                 </div>
             </li>
 
-          </ul>
+        </ul>
 
         </nav>
         <!-- End of Topbar -->
-
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
@@ -127,20 +126,20 @@
                     <h1 class="h1 mb-4 text-gray-800 mt-5">Mortgage Loan Calculator</h1>
                 </div>
             </div>
-            
+
 
             <div class="row text-center">
                 <div class="col-md-6 col-xs-4 input-section">
                     <!-- Basic Card Example -->
                     <div class="card bg-gray-100 border-primary shadow custom-card">
-                        
+
                         <div class="card-body">
                             <label class="text-s font-weight-bold text-success text-uppercase mb-1">Loan Amount</label>
-                                <input class="form-control" type="text" autocomplete="off" placeholder="Enter loan amount" id="num1">
+                            <input class="form-control" type="text" autocomplete="off" placeholder="Enter loan amount" id="num1">
                             <label class="text-s font-weight-bold text-danger text-uppercase mb-1">Term (Months)</label>
-                                <input class="form-control" type="text" autocomplete="off" placeholder="Enter loan term " id="num2">
+                            <input class="form-control" type="text" autocomplete="off" placeholder="Enter loan term " id="num2">
                             <label class="text-s font-weight-bold text-primary text-uppercase mb-1">Interest Rate</label>
-                                <input class="form-control" type="text" autocomplete="off" placeholder="Enter interest rate" id="num3">
+                            <input class="form-control" type="text" autocomplete="off" placeholder="Enter interest rate" id="num3">
 
                             <button class="btn btn-danger" onclick="reset()">Clear</button>
                             <button class="btn btn-primary" onclick="calculate()">Calculate</button>
@@ -148,62 +147,62 @@
                     </div>
                 </div>
 
-                    <div class="col-md-6 col-xs-4 output-section">
-                        <!-- Total principal card -->
-                        <div class="col custom-card">
-                            <div class="card bg-gradient-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Principal</div>
-                                            <div class="h5 mb-0 font-weight-bold text-white">$40,000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
+                <div class="col-md-6 col-xs-4 output-section">
+                    <!-- Total principal card -->
+                    <div class="col custom-card">
+                        <div class="card bg-gradient-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Principal</div>
+                                        <div class="h5 mb-0 font-weight-bold text-white">$40,000</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Total interest card -->
-                        <div class="col custom-card">
-                            <div class="card bg-gradient-danger shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Interest</div>
-                                            <div class="h5 mb-0 font-weight-bold text-white">$215,000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
+                    <!-- Total interest card -->
+                    <div class="col custom-card">
+                        <div class="card bg-gradient-danger shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Interest</div>
+                                        <div class="h5 mb-0 font-weight-bold text-white">$215,000</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Total cost card -->
-                        <div class="col custom-card">
-                            <div class="card bg-gradient-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Cost</div>
-                                            <div class="h5 mb-0 font-weight-bold text-white">$40,000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-file-invoice-dollar fa-2x text-gray-300"></i>
-                                        </div>
+                    <!-- Total cost card -->
+                    <div class="col custom-card">
+                        <div class="card bg-gradient-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Cost</div>
+                                        <div class="h5 mb-0 font-weight-bold text-white">$40,000</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-file-invoice-dollar fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
             <!-- Monthly payments card -->
-            <div class="row text-center">
+            <div class="row text-center mb-3">
                 <div class="col mt-3">
                     <div class="card bg-gray-100 border-success shadow h-100 py-2">
                         <div class="card-body">
@@ -221,62 +220,99 @@
                 </div>
             </div>
 
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Amortization Table</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Payment</th>
+                                    <th>Principal</th>
+                                    <th>Interest</th>
+                                    <th>Total Interest</th>
+                                    <th>Balance</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Payment</th>
+                                    <th>Principal</th>
+                                    <th>Interest</th>
+                                    <th>Total Interest</th>
+                                    <th>Balance</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <!-- /.container-fluid -->
 
-      </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
+    </div>
+    <!-- End of Main Content -->
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
         <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
-          </div>
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Your Website 2020</span>
+            </div>
         </div>
-      </footer>
-      <!-- End of Footer -->
-
+    </footer>
+    <!-- End of Footer -->
     </div>
     <!-- End of Content Wrapper -->
-
-  </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
     </div>
-  </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 </body>
 
 </html>
