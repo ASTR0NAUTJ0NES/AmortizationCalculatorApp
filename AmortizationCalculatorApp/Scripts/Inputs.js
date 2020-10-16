@@ -38,8 +38,11 @@ function reset() {
     document.getElementById('inputLoan').value = "";
     document.getElementById('inputTerm').value = "";
     document.getElementById('inputInterest').value = "";
-    document.getElementById("totalPrincipleSpan").innerHTML = "";
-    document.getElementById("totalCostSpan").innerHTML = "";
-    document.getElementById("totalInterestSpan").innerHTML = "";
-    document.getElementById("monthlyPaymentSpan").innerHTML = "";
+    document.getElementById("totalPrincipleSpan").innerHTML = "$0.00";
+    document.getElementById("totalCostSpan").innerHTML = "$0.00";
+    document.getElementById("totalInterestSpan").innerHTML = "$0.00";
+    document.getElementById("monthlyPaymentSpan").innerHTML = "$0.00";
+    document.getElementById("loanOutput").innerHTML = "$0.00";
+    document.getElementById("termOutput").innerHTML = "0";
+    document.getElementById("interestOutput").innerHTML = "0%";
 }

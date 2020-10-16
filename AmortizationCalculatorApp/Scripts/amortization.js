@@ -54,4 +54,8 @@ function calculate() {
 
 	// outputting monthly payment
 	document.getElementById("monthlyPaymentSpan").innerHTML = `$${formatMoney(monthlyPayment(totalCost(monthlyInterestRate(interestRate), loanAmount, term), term), 2, ".", ",")}`;
+
+	document.getElementById("loanOutput").innerHTML = `$${loanAmount}`;
+	document.getElementById("termOutput").innerHTML = `${term}`;
+	document.getElementById("interestOutput").innerHTML = `${interestRate}%`;
 }
