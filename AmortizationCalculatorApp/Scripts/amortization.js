@@ -56,27 +56,45 @@ function calculate() {
 		})
 	} else {
 		// outputting total cost
-		let tCost = `$${formatMoney(totalCost(monthlyInterestRate(interestRate), loanAmount, term), 2, ".", ",")}`;
-		document.getElementById("totalCostSpan").innerHTML = tCost;
+		let tCost = `${formatMoney(totalCost(monthlyInterestRate(interestRate), loanAmount, term), 2, ".", ",")}`;
+		document.getElementById("totalCostSpan").innerHTML = `$${tCost}`;
 		// outputting total interest
-		let tInterest = `$${formatMoney(totalInterest(totalCost(monthlyInterestRate(interestRate), loanAmount, term), loanAmount), 2, ".", ",")}`;
-		document.getElementById("totalInterestSpan").innerHTML = tInterest;
+		let tInterest = `${formatMoney(totalInterest(totalCost(monthlyInterestRate(interestRate), loanAmount, term), loanAmount), 2, ".", ",")}`;
+		document.getElementById("totalInterestSpan").innerHTML = `$${tInterest}`;
 
 		// outputting monthly payment
-		let mPayment = `$${formatMoney(monthlyPayment(totalCost(monthlyInterestRate(interestRate), loanAmount, term), term), 2, ".", ",")}`
-		document.getElementById("monthlyPaymentSpan").innerHTML = mPayment;
+		let mPayment = `${monthlyPayment(totalCost(monthlyInterestRate(interestRate), loanAmount, term), term)}`
+		document.getElementById("monthlyPaymentSpan").innerHTML = `$${formatMoney(mPayment, 2, ".", ",")}`;
+		
 
 		document.getElementById("loanOutput").innerHTML = `$${loanAmount}`;
 		document.getElementById("termOutput").innerHTML = `${term}`;
 		document.getElementById("interestOutput").innerHTML = `${interestRate}%`;
 
-		let tableOut = "";
+		let tableOut = "<tbody>";
+		let currPrinc = loanAmount;
+		let intPayment = 0;
+		let totalInt = 0;
+		let princPayment = 0;
 		//Loop to fill the table
-		for (let i = 1; i <= term; i++) {
+		for (let loop = 1; loop <= term; loop++) {
+			intPayment = currPrinc * (interestRate / 1200);
+			princPayment = (mPayment - intPayment);
+			totalInt = totalInt + intPayment;
+			currPrinc = currPrinc - princPayment;
 			tableOut += '<tr>';
-			tableOut += `<td>${i}</td>`
-			tableOut += `<td>`
-        }
+			tableOut += `<td>${loop}</td>`;
+			tableOut += `<td>${formatMoney(mPayment, 2, ".", ",")}</td>`;
+			tableOut += `<td>${princPayment.toFixed(2)}</td>`;
+			tableOut += `<td>${intPayment.toFixed(2)}</td>`;
+			tableOut += `<td>${totalInt.toFixed(2)}</td>`;
+			tableOut += `<td>${currPrinc.toFixed(2)}</td>`
+			tableOut += '</tr>';
+		}
+		tableOut += "</tbody>";
+		tableOut += "<thead><tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Total Interest</th><th>Balance</th></tr></thead>"
+		tableOut += "<tfoot><tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Total Interest</th><th>Balance</th></tr></tfoot>"
+		document.getElementById("dataTable").innerHTML = tableOut;
 	}
 
 
