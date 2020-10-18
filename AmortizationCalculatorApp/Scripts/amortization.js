@@ -89,7 +89,4 @@ function calculate() {
 		tableOut += "<tfoot><tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Total Interest</th><th>Balance</th></tr></tfoot>"
 		document.getElementById("dataTable").innerHTML = tableOut;
 	}
-
-
-
 }
