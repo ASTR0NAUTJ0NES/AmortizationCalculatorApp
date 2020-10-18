@@ -58,3 +58,7 @@ button {
 .warningBg {
     background-color: #f6c23e;
 }
+
+#dataTable_filter {
+    visibility: hidden;
+}

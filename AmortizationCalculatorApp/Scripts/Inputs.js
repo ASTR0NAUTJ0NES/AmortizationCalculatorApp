@@ -2,7 +2,7 @@
 document.getElementById('inputTerm').addEventListener('keypress', function (evt) { 
     let char = evt.which;
     
-    if (char >= 48 && char <= 57 || char == 46 || char == 44 ) {
+    if (char >= 48 && char <= 57 || char == 46) {
         return true;
     }
     else {
@@ -13,7 +13,7 @@ document.getElementById('inputTerm').addEventListener('keypress', function (evt)
 document.getElementById('inputLoan').addEventListener('keypress', function (evt) {
     let char = evt.which;
 
-    if (char >= 48 && char <= 57 || char == 46 || char == 44 || char == ",") {
+    if (char >= 48 && char <= 57 || char == 46) {
         return true;
     }
     else {
@@ -24,7 +24,7 @@ document.getElementById('inputLoan').addEventListener('keypress', function (evt)
 document.getElementById('inputInterest').addEventListener('keypress', function (evt) {
     let char = evt.which;
 
-    if (char >= 48 && char <= 57 || char == 46 || char == 44) {
+    if (char >= 48 && char <= 57 || char == 46) {
         return true;
     }
     else {
