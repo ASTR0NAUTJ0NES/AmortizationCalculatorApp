@@ -67,8 +67,8 @@ function calculate() {
 		document.getElementById("monthlyPaymentSpan").innerHTML = `$${formatMoney(mPayment, 2, ".", ",")}`;
 		
 
-		document.getElementById("loanOutput").innerHTML = `$${loanAmount}`;
-		document.getElementById("termOutput").innerHTML = `${term}`;
+		document.getElementById("loanOutput").innerHTML = `$${formatMoney(loanAmount, 2, ".", ",")}`;
+		document.getElementById("termOutput").innerHTML = `${term} Months`;
 		document.getElementById("interestOutput").innerHTML = `${interestRate}%`;
 
 		let tableOut = "<tbody>";
@@ -79,16 +79,16 @@ function calculate() {
 		//Loop to fill the table
 		for (let loop = 1; loop <= term; loop++) {
 			intPayment = currPrinc * (interestRate / 1200);
-			princPayment = (mPayment - intPayment);
+			princPayment = mPayment - intPayment;
 			totalInt = totalInt + intPayment;
 			currPrinc = currPrinc - princPayment;
 			tableOut += '<tr>';
 			tableOut += `<td>${loop}</td>`;
-			tableOut += `<td>${formatMoney(mPayment, 2, ".", ",")}</td>`;
-			tableOut += `<td>${princPayment.toFixed(2)}</td>`;
-			tableOut += `<td>${intPayment.toFixed(2)}</td>`;
-			tableOut += `<td>${totalInt.toFixed(2)}</td>`;
-			tableOut += `<td>${currPrinc.toFixed(2)}</td>`
+			tableOut += `<td>$${formatMoney(mPayment, 2, ".", ",")}</td>`;
+			tableOut += `<td>$${formatMoney(princPayment, 2, ".", ",")}</td>`;
+			tableOut += `<td>$${formatMoney(intPayment, 2, ".", ",")}</td>`;
+			tableOut += `<td>$${formatMoney(totalInt, 2, ".", ",")}</td>`;
+			tableOut += `<td>$${formatMoney(currPrinc, 2, ".", ",")}</td>`
 			tableOut += '</tr>';
 		}
 		tableOut += "</tbody>";
