@@ -132,7 +132,6 @@
 
                 </nav>
                 <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -154,7 +153,7 @@
                                     <input class="form-control" type="text" autocomplete="off" placeholder="Enter interest rate" id="inputInterest">
 
                                     <button class="btn btn-danger mr-5" onclick="reset()">Clear</button>
-                                    <button class="btn btn-primary ml-5" onclick="calculate()">Calculate</button>
+                                    <button id="calculateBtn" class="btn btn-primary ml-5" onclick="calculate()">Calculate</button>
                                 </div>
                             </div>
                         </div>
@@ -231,6 +230,85 @@
                             </div>
                         </div>
                     </div>
+
+                    <!--<div class="row text-center">
+                        <div class="col-md-6 col-xs-4 input-section">-->
+                            <!-- Pie Chart -->
+                            <!--<div class="card shadow mb-4">-->
+                                <!-- Card Header - Dropdown -->
+                                <!--<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Expenses</h6>
+                                </div>-->
+                                <!-- Card Body -->
+                                <!--<div class="card-body">
+                                    <div class="chart-pie pt-4 pb-2">
+                                        <canvas id="myPieChart"></canvas>
+                                    </div>
+                                    <div class="mt-4 text-center small">
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-primary"></i> Principle
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-success"></i> Interest
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xs-4 output-section">-->
+                            <!-- Total principal card -->
+                            <!--<div class="col custom-card mt-0">
+                                <div class="card bg-gradient-success shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Principal</div>
+                                                <div class="h5 mb-0 font-weight-bold text-white"><span id="totalPrincipleSpan">$0.00</span></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>-->
+
+                            <!-- Total interest card -->
+                            <!--<div class="col custom-card">
+                                <div class="card bg-gradient-danger shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Interest</div>
+                                                <div class="h5 mb-0 font-weight-bold text-white"><span id="totalInterestSpan">$0.00</span></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>-->
+
+                            <!-- Total cost card -->
+                            <!--<div class="col custom-card">
+                                <div class="card bg-gradient-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Cost</div>
+                                                <div class="h5 mb-0 font-weight-bold text-white"><span id="totalCostSpan">$0.00</span></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-file-invoice-dollar fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
 
                     <div class="row text-center">
                         <!-- Loan amount card -->
@@ -325,7 +403,6 @@
 
             </div>
             <!-- End of Main Content -->
-
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
@@ -335,13 +412,12 @@
                 </div>
             </footer>
             <!-- End of Footer -->
-                
+
         </div>
         <!-- End of Content Wrapper -->
 
-    </div>  
+    </div>
     <!-- End of Page Wrapper -->
-
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
@@ -360,11 +436,13 @@
     <!-- Page level plugins -->
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
     <script src="Scripts/Inputs.js"></script>
     <script src="Scripts/amortization.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
 </body>
 
 </html>

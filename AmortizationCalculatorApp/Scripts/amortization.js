@@ -70,7 +70,4 @@ function calculate() {
 			tableOut += `<td>${i}</td>`
         }
 	}
-
-
-	
 }
