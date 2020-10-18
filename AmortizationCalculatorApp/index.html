@@ -116,116 +116,59 @@
 
         </ul>
         <!-- End Of Sidebar -->
+
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
+            <!-- Main Content -->
+            <div id="content">
 
-            <!-- End of Topbar -->
-            <!-- Begin Page Content -->
-            <div class="container-fluid">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-3 static-top shadow">
 
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
 
-                <!-- Main Content -->
-                <div id="content">
+                </nav>
+                <!-- End of Topbar -->
 
-                    <!-- Topbar -->
-                    <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top">
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
 
-                        <!-- Sidebar Toggle (Topbar) -->
-                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </nav>
-                    <!-- End of Topbar -->
-                    <!-- Begin Page Content -->
-                    <div class="container-fluid">
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-3">
+                        <h1 class="h3 mb-0 text-gray-800">Mortgage Dashboard</h1>
+                    </div>
 
-                        <!-- Page Heading -->
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">Mortgage Dashboard</h1>
-                        </div>
+                    <div class="row mt-0 text-center">
+                        <div class="col-md-6 col-xs-4 input-section">
+                            <!-- Basic Card Example -->
+                            <div class="card bg-gray-100 border-primary shadow custom-card mt-0">
+                                <div class="card-body">
+                                    <label class="text-s font-weight-bold text-dark text-uppercase mb-1 text-left">Loan Amount $</label>
+                                    <input class="form-control" type="text" autocomplete="off" placeholder="Enter loan amount" id="inputLoan">
+                                    <label class="text-s font-weight-bold text-dark text-uppercase mb-1">Term (Months)</label>
+                                    <input class="form-control" type="text" autocomplete="off" placeholder="Enter loan term " id="inputTerm">
+                                    <label class="text-s font-weight-bold text-dark text-uppercase mb-1">Interest Rate %</label>
+                                    <input class="form-control" type="text" autocomplete="off" placeholder="Enter interest rate" id="inputInterest">
 
-                        <div class="row mt-0 text-center">
-                            <div class="col-md-6 col-xs-4 input-section">
-                                <!-- Basic Card Example -->
-                                <div class="card bg-gray-100 border-primary shadow custom-card mt-0">
-                                    <div class="card-body">
-                                        <label class="text-s font-weight-bold text-dark text-uppercase mb-1 text-left">Loan Amount</label>
-                                        <input class="form-control" type="text" autocomplete="off" placeholder="Enter loan amount" id="inputLoan">
-                                        <label class="text-s font-weight-bold text-dark text-uppercase mb-1">Term (Months)</label>
-                                        <input class="form-control" type="text" autocomplete="off" placeholder="Enter loan term " id="inputTerm">
-                                        <label class="text-s font-weight-bold text-dark text-uppercase mb-1">Interest Rate</label>
-                                        <input class="form-control" type="text" autocomplete="off" placeholder="Enter interest rate" id="inputInterest">
-
-                                        <button class="btn btn-danger mr-5" onclick="reset()">Clear</button>
-                                        <button class="btn btn-primary ml-5" onclick="calculate()">Calculate</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 col-xs-4 output-section">
-                                <!-- Total principal card -->
-                                <div class="col custom-card mt-0">
-                                    <div class="card bg-gradient-success shadow h-100 py-2">
-                                        <div class="card-body">
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col mr-2">
-                                                    <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Principal</div>
-                                                    <div class="h5 mb-0 font-weight-bold text-white"><span id="totalPrincipleSpan">$0.00</span></div>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Total interest card -->
-                                <div class="col custom-card">
-                                    <div class="card bg-gradient-danger shadow h-100 py-2">
-                                        <div class="card-body">
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col mr-2">
-                                                    <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Interest</div>
-                                                    <div class="h5 mb-0 font-weight-bold text-white"><span id="totalInterestSpan">$0.00</span></div>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Total cost card -->
-                                <div class="col custom-card">
-                                    <div class="card bg-gradient-primary shadow h-100 py-2">
-                                        <div class="card-body">
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col mr-2">
-                                                    <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Cost</div>
-                                                    <div class="h5 mb-0 font-weight-bold text-white"><span id="totalCostSpan">$0.00</span></div>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <i class="fas fa-file-invoice-dollar fa-2x text-gray-300"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <button class="btn btn-danger mr-5" onclick="reset()">Clear</button>
+                                    <button class="btn btn-primary ml-5" onclick="calculate()">Calculate</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Monthly payments card -->
-                        <div class="row text-center mb-4">
-                            <div class="col mt-3">
-                                <div class="card bg-gray-100 border-success shadow h-100 py-2">
+                        <div class="col-md-6 col-xs-4 output-section">
+                            <!-- Total principal card -->
+                            <div class="col custom-card mt-0">
+                                <div class="card bg-gradient-success shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-lg font-weight-bold text-success text-uppercase mb-1">Your monthly payments</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="monthlyPaymentSpan">$0.00</span></div>
+                                                <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Principal</div>
+                                                <div class="h5 mb-0 font-weight-bold text-white"><span id="totalPrincipleSpan">$0.00</span></div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -234,17 +177,15 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="row text-center">
-                            <!-- Loan amount card -->
-                            <div class="col custom-card mt-0">
-                                <div class="card border-bottom-success shadow h-100 py-2">
+                            <!-- Total interest card -->
+                            <div class="col custom-card">
+                                <div class="card bg-gradient-danger shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-s font-weight-bold text-gray-800 text-uppercase mb-1">Loan amount</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="loanOutput">$0.00</span></div>
+                                                <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Interest</div>
+                                                <div class="h5 mb-0 font-weight-bold text-white"><span id="totalInterestSpan">$0.00</span></div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -253,116 +194,175 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Term card card -->
-                            <div class="col custom-card mt-0">
-                                <div class="card border-bottom-primary shadow h-100 py-2">
+
+                            <!-- Total cost card -->
+                            <div class="col custom-card">
+                                <div class="card bg-gradient-primary shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-s font-weight-bold text-gray-800 text-uppercase mb-1">Term</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="termOutput">0</span></div>
+                                                <div class="text-s font-weight-bold text-white text-uppercase mb-1">Total Cost</div>
+                                                <div class="h5 mb-0 font-weight-bold text-white"><span id="totalCostSpan">$0.00</span></div>
                                             </div>
                                             <div class="col-auto">
-                                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Interest rate card -->
-                            <div class="col custom-card mt-0">
-                                <div class="card border-bottom-danger shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-s font-weight-bold text-gray-800 text-uppercase mb-1">Interest rate</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="interestOutput">0%</span></div>
-                                            </div>
-                                            <div class="col-auto">
-                                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                                <i class="fas fa-file-invoice-dollar fa-2x text-gray-300"></i>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- DataTales Example -->
-                        <div class="card shadow mb-4 mt-3">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Amortization Table</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Month</th>
-                                                <th>Payment</th>
-                                                <th>Principal</th>
-                                                <th>Interest</th>
-                                                <th>Total Interest</th>
-                                                <th>Balance</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Month</th>
-                                                <th>Payment</th>
-                                                <th>Principal</th>
-                                                <th>Interest</th>
-                                                <th>Total Interest</th>
-                                                <th>Balance</th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-
-                                    <!-- /.container-fluid -->
-
+                    <!-- Monthly payments card -->
+                    <div class="row text-center mb-4">
+                        <div class="col mt-3">
+                            <div class="card bg-gray-100 border-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-lg font-weight-bold text-success text-uppercase mb-1">Your monthly payments</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="monthlyPaymentSpan">$0.00</span></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
                                 </div>
-                                <!-- End of Main Content -->
                             </div>
-
-                            <!-- End of Content Wrapper -->
-
                         </div>
-                        <!-- Footer -->
-                        <footer class="sticky-footer bg-white">
-                            <div class="container my-auto">
-                                <div class="copyright text-center my-auto">
-                                    <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+
+                    <div class="row text-center">
+                        <!-- Loan amount card -->
+                        <div class="col custom-card mt-0">
+                            <div class="card border-bottom-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-s font-weight-bold text-gray-800 text-uppercase mb-1">Loan amount</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="loanOutput">$0.00</span></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </footer>
-                        <!-- End of Footer -->
-                        <!-- End of Main Content -->
-                        <!-- End of Page Wrapper -->
-                        <!-- Scroll to Top Button-->
-                        <a class="scroll-to-top rounded" href="#page-top">
-                            <i class="fas fa-angle-up"></i>
-                        </a>
+                        </div>
+                        <!-- Term card card -->
+                        <div class="col custom-card mt-0">
+                            <div class="card border-bottom-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-s font-weight-bold text-gray-800 text-uppercase mb-1">Term</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="termOutput">0</span></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Interest rate card -->
+                        <div class="col custom-card mt-0">
+                            <div class="card border-bottom-danger shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-s font-weight-bold text-gray-800 text-uppercase mb-1">Interest rate</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="interestOutput">0%</span></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4 mt-3">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Amortization Table</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Month</th>
+                                            <th>Payment</th>
+                                            <th>Principal</th>
+                                            <th>Interest</th>
+                                            <th>Total Interest</th>
+                                            <th>Balance</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Month</th>
+                                            <th>Payment</th>
+                                            <th>Principal</th>
+                                            <th>Interest</th>
+                                            <th>Total Interest</th>
+                                            <th>Balance</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
 
 
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-                        <!-- Bootstrap core JavaScript-->
-                        <script src="vendor/jquery/jquery.min.js"></script>
-                        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-                        <!-- Core plugin JavaScript-->
-                        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-                        <!-- Custom scripts for all pages-->
-                        <script src="js/sb-admin-2.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
 
-                        <!-- Page level plugins -->
-                        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-                        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-                        <!-- Page level custom scripts -->
-                        <script src="js/demo/datatables-demo.js"></script>
-                        <script src="Scripts/Inputs.js"></script>
-                        <script src="Scripts/amortization.js"></script>
-                        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+    <script src="Scripts/Inputs.js"></script>
+    <script src="Scripts/amortization.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>
