@@ -11,21 +11,25 @@ button {
 .custom-card {
     margin: 20px auto;   
 }
+.icons-row {
+    height: 200px;
+}
+.icons {
+    max-height: 50%;
+}
 .title-text {
     color: #4e73df;
-    font-size: 7rem;
+    font-size: 4rem;
     line-height: 5.75rem;
 }
-.image-size{
-    max-height: 15rem;
-    padding-top: 3rem;
+p {
+    max-width: 800px;
+    margin: 30px auto;
+    font-size: 1.5rem;
 }
 .btn-landing {
     color: white !important;
     min-width: 7rem;
-}
-.main-image{
-    max-height: 45rem;
 }
 .body-padding{
     padding-left: 3rem;
