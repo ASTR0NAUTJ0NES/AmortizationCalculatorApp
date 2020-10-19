@@ -71,6 +71,9 @@ function calculate() {
 		//Loop to fill the table
 		for (let loop = 1; loop <= term; loop++) {
 			intPayment = currPrinc * (interestRate / 1200);
+			if (mPayment > currPrinc + intPayment) {
+				mPayment = currPrinc + intPayment;
+            }
 			princPayment = mPayment - intPayment;
 			totalInt = totalInt + intPayment;
 			currPrinc = currPrinc - princPayment;
