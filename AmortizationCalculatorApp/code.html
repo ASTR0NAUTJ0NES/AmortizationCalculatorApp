@@ -151,71 +151,111 @@
                             <button type="button" class="collapseThis successBg">Payment Calculations</button>
                             <div class="content">
                                 <pre>
-<code class="language-js line-numbers">function formatMoney(number, decPlaces, decSep, thouSep) {
-    decPlaces = isNaN(decPlaces = Math.abs(decPlaces)) ? 2 : decPlaces,
-    decSep = typeof decSep === "undefined" ? "." : decSep;
-    thouSep = typeof thouSep === "undefined" ? "," : thouSep;
-    var sign = number < 0 ? "-" : "";
-    var i = String(parseInt(number = Math.abs(Number(number) || 0).toFixed(decPlaces)));
-    var j = (j = i.length) > 3 ? j % 3 : 0;
-    
-    return sign +
-    (j ? i.substr(0, j) + thouSep : "") +
-    i.substr(j).replace(/(\decSep{3})(?=\decSep)/g, "$1" + thouSep) +
-    (decPlaces ? decSep + Math.abs(number - i).toFixed(decPlaces).slice(2) : "");
-}
+<code class="language-js line-numbers">// formats output to US Currency format
+const formatter = new Intl.NumberFormat('en-US', {
+	style: 'currency',
+	currency: 'USD',
+	minimumFractionDigits: 2
+})
 
 // calculate monthy interest rate
 function monthlyInterestRate(yearlyInterestRate) {
-    return (yearlyInterestRate / 100) / 12;
+	return (yearlyInterestRate / 100) / 12;
 }
 
 // calculates total cost
 function totalCost(monthlyInterestRate, principleLoanAmount, totalMonths) {
-    return ((monthlyInterestRate * principleLoanAmount) / (1 - (1 + monthlyInterestRate) ** -totalMonths)) * totalMonths;
+	return ((monthlyInterestRate * principleLoanAmount) / (1 - (1 + monthlyInterestRate) ** -totalMonths)) * totalMonths;
 }
 
 // calculate monthly payment
 function monthlyPayment(totalCost, totalMonths) {
-    return totalCost / totalMonths;
+	return totalCost / totalMonths;
 }
 
 // calculate total interest accrued
 function totalInterest(totalCost, principleLoanAmount) {
-    return totalCost - principleLoanAmount;
+	return totalCost - principleLoanAmount;
 }
-
-// adds formatted principle loan amount to results as you enter
-document.getElementById("inputLoan").addEventListener("focusout", function () {
-    let inputLoanAmount = Number(document.getElementById("inputLoan").value);
-    document.getElementById("totalPrincipleSpan").innerHTML = `$${formatMoney(inputLoanAmount, 2, ".", ",")}`;
-});
-
-// do calculations when user submits data
+</code>
+</pre>
+                            </div>
+                            <button type="button" class="collapseThis dangerBg">Output Functions</button>
+                            <div class="content">
+                                <pre>
+<code class="language-js line-numbers">
+    // do calculations when user submits data
 function calculate() {
-    let loanAmount = parseFloat(document.getElementById("inputLoan").value);
-    let term = parseInt(document.getElementById("inputTerm").value);
-    let interestRate = parseFloat(document.getElementById("inputInterest").value);
+	let loanAmount = parseFloat(document.getElementById("inputLoan").value);
+	let term = parseInt(document.getElementById("inputTerm").value);
+	let interestRate = parseFloat(document.getElementById("inputInterest").value);
 
-    // outputting total cost
-    document.getElementById("totalCostSpan").innerHTML = `$${formatMoney(totalCost(monthlyInterestRate(interestRate), loanAmount, term), 2, ".", ",")}`;
+	if (isNaN(loanAmount) || isNaN(term) || isNaN(interestRate)) {
+		Swal.fire({
+			title: 'Error!',
+			text: 'Inputs can not be blank',
+			icon: 'warning',
+			confirmButtonText: 'Back'
+		})
+	} else {
+		// outputting total cost
+		let tCost = `${formatter.format(totalCost(monthlyInterestRate(interestRate), loanAmount, term))}`;
+		document.getElementById("totalCostSpan").innerHTML = `${tCost}`;
+		// outputting total interest
+		let tInterest = `${formatter.format(totalInterest(totalCost(monthlyInterestRate(interestRate), loanAmount, term), loanAmount))}`;
+		document.getElementById("totalInterestSpan").innerHTML = `${tInterest}`;
 
-    // outputting total interest
-    document.getElementById("totalInterestSpan").innerHTML = `$${formatMoney(totalInterest(totalCost(monthlyInterestRate(interestRate), loanAmount, term), loanAmount), 2, ".", ",")}`;
+		// outputting monthly payment
+		let mPayment = `${monthlyPayment(totalCost(monthlyInterestRate(interestRate), loanAmount, term), term)}`
+		document.getElementById("monthlyPaymentSpan").innerHTML = `${formatter.format(mPayment)}`;
 
-    // outputting monthly payment
-    document.getElementById("monthlyPaymentSpan").innerHTML = `$${formatMoney(monthlyPayment(totalCost(monthlyInterestRate(interestRate), loanAmount, term), term), 2, ".", ",")}`;
+
+		document.getElementById("loanOutput").innerHTML = `${formatter.format(loanAmount)}`;
+		document.getElementById("termOutput").innerHTML = `${term} Months`;
+		document.getElementById("interestOutput").innerHTML = `${interestRate}%`;
+
+		let tableOut = "";
+		let currPrinc = loanAmount;
+		let intPayment = 0;
+		let totalInt = 0;
+		let princPayment = 0;
+		//Loop to fill the table
+		for (let loop = 1; loop <= term; loop++) {
+			intPayment = currPrinc * (interestRate / 1200);
+			princPayment = mPayment - intPayment;
+			totalInt = totalInt + intPayment;
+			currPrinc = currPrinc - princPayment;
+			tableOut += '<tr>';
+			tableOut += `<td>${loop}</td>`;
+			tableOut += `<td>${formatter.format(mPayment)}</td>`;
+			tableOut += `<td>${formatter.format(princPayment)}</td>`;
+			tableOut += `<td>${formatter.format(intPayment)}</td>`;
+			tableOut += `<td>${formatter.format(totalInt)}</td>`;
+			tableOut += `<td>${formatter.format(currPrinc)}</td>`
+			tableOut += '</tr>';
+		}
+		tableOut += "<thead><tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Total Interest</th><th>Balance</th></tr></thead>"
+		tableOut += "<tfoot><tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Total Interest</th><th>Balance</th></tr></tfoot>"
+		document.getElementById("dataTable").innerHTML = tableOut;
+	}
+
+	// Call the dataTables jQuery plugin
+	$(document).ready(function () {
+		$('#dataTable').DataTable();
+	});
 }
-                                </code>
+
+</code>
 </pre>
                             </div>
                             <button type="button" class="collapseThis warningBg">Input Validation</button>
                             <div class="content">
                                 <pre>
-<code class="language-js line-numbers">document.getElementById('inputTerm').addEventListener('keypress', function (evt) {
+<code class="language-js line-numbers">// Validates characters for user keyboard inputs
+document.getElementById('inputTerm').addEventListener('keypress', function (evt) { 
     let char = evt.which;
-
-    if (char >= 48 && char <= 57 || char == 46 || char == 44 ) {
+    
+    if (char >= 48 && char <= 57 || char == 46) {
         return true;
     }
     else {
@@ -226,7 +266,7 @@ function calculate() {
 document.getElementById('inputLoan').addEventListener('keypress', function (evt) {
     let char = evt.which;
 
-    if (char >= 48 && char <= 57 || char == 46 || char == 44) {
+    if (char >= 48 && char <= 57 || char == 46) {
         return true;
     }
     else {
@@ -237,7 +277,7 @@ document.getElementById('inputLoan').addEventListener('keypress', function (evt)
 document.getElementById('inputInterest').addEventListener('keypress', function (evt) {
     let char = evt.which;
 
-    if (char >= 48 && char <= 57 || char == 46 || char == 44) {
+    if (char >= 48 && char <= 57 || char == 46) {
         return true;
     }
     else {
@@ -245,7 +285,7 @@ document.getElementById('inputInterest').addEventListener('keypress', function (
         return false;
     }
 });
-                                    </code>
+</code> 
 </pre>
                             </div>
                         </div>

@@ -52,7 +52,7 @@ button {
 .successBg {
     background-color: #1cc88a;
 }
-.active, .successBg:hover, .warningBg:hover{
+.active, .successBg:hover, .warningBg:hover, .dangerBg:hover{
     filter: brightness(85%);
 }
 .warningBg {
@@ -61,4 +61,7 @@ button {
 
 #dataTable_filter {
     visibility: hidden;
+}
+.dangerBg {
+    background-color: #e74a3b;
 }
