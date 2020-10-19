@@ -9,7 +9,7 @@ Our app also features a navigation side menu that is easy for the user to naviga
 
 ## Theme
 
-The Mortgage Loan Calculator was design and built using the <a href="https://startbootstrap.com/themes/sb-admin-2" target="_blank">[SB Admin 2]</a> template from Bootstrap.
-<a href="https://startbootstrap.com/themes/sb-admin-2" target="_blank">[SB Admin 2]</a> is an open source admin dashboard theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/).
+The Mortgage Loan Calculator was design and built using the <a href="https://startbootstrap.com/themes/sb-admin-2" target="_blank">SB Admin 2</a> template from Bootstrap.
+<a href="https://startbootstrap.com/themes/sb-admin-2" target="_blank">SB Admin 2</a> is an open source admin dashboard theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/).
 
  
