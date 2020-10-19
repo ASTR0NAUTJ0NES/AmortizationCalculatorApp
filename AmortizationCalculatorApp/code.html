@@ -110,7 +110,7 @@
                     </div>
                 </div>
             </li>
-            
+
 
         </ul>
 
@@ -319,25 +319,8 @@ document.getElementById('inputInterest').addEventListener('keypress', function (
 
         <!-- Custom scripts for all pages-->
         <script src="js/sb-admin-2.min.js"></script>
-        <script src="Scripts/prism.js"></script>
-
-        <script>
-            let coll = document.getElementsByClassName("collapseThis");
-            let i;
-
-            for (i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    let content = this.nextElementSibling;
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "rem";
-                    }
-                });
-            }
-        </script>
-       
+        <script src="Scripts/prism.js"></script>        
+        <script src="Scripts/code.js"></script>
 </body>
 
 </html>
