@@ -11,16 +11,9 @@ button {
 .custom-card {
     margin: 20px auto;   
 }
-.icons-row {
-    height: 200px;
-}
-.icons {
-    max-height: 50%;
-}
-.title-text {
-    color: #4e73df;
+h1 {
     font-size: 4rem;
-    line-height: 5.75rem;
+    font-weight: 700;
 }
 p {
     max-width: 800px;
