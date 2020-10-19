@@ -64,7 +64,7 @@ function calculate() {
 		document.getElementById("termOutput").innerHTML = `${term} Months`;
 		document.getElementById("interestOutput").innerHTML = `${interestRate}%`;
 
-		let tableOut = "<tbody>";
+		let tableOut = "";
 		let currPrinc = loanAmount;
 		let intPayment = 0;
 		let totalInt = 0;
@@ -84,9 +84,14 @@ function calculate() {
 			tableOut += `<td>${formatter.format(currPrinc)}</td>`
 			tableOut += '</tr>';
 		}
-		tableOut += "</tbody>";
 		tableOut += "<thead><tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Total Interest</th><th>Balance</th></tr></thead>"
 		tableOut += "<tfoot><tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Total Interest</th><th>Balance</th></tr></tfoot>"
 		document.getElementById("dataTable").innerHTML = tableOut;
+
 	}
+
+	// Call the dataTables jQuery plugin
+	$(document).ready(function () {
+		$('#dataTable').DataTable();
+	});
 }
