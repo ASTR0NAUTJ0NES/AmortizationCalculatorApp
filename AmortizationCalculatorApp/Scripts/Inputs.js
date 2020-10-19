@@ -45,4 +45,7 @@ function reset() {
     document.getElementById("loanOutput").innerHTML = "$0.00";
     document.getElementById("termOutput").innerHTML = "0";
     document.getElementById("interestOutput").innerHTML = "0%";
+    let table = $('#dataTable').DataTable();
+    table.state.clear();
+    window.location.reload();
 }

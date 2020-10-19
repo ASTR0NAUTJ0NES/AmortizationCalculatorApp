@@ -35,7 +35,6 @@ document.getElementById("inputLoan").addEventListener("focusout", function () {
 
 // do calculations when user submits data
 function calculate() {
-
 	let loanAmount = parseFloat(document.getElementById("inputLoan").value);
 	let term = parseInt(document.getElementById("inputTerm").value);
 	let interestRate = parseFloat(document.getElementById("inputInterest").value);
