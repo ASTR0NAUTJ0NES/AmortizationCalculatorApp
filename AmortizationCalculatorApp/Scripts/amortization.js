@@ -87,7 +87,6 @@ function calculate() {
 		tableOut += "<thead><tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Total Interest</th><th>Balance</th></tr></thead>"
 		tableOut += "<tfoot><tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Total Interest</th><th>Balance</th></tr></tfoot>"
 		document.getElementById("dataTable").innerHTML = tableOut;
-
 	}
 
 	// Call the dataTables jQuery plugin
