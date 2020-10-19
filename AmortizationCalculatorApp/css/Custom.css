@@ -20,9 +20,10 @@ p {
     margin: 30px auto;
     font-size: 1.5rem;
 }
-.btn-landing {
-    color: white !important;
-    min-width: 7rem;
+.code-title-text {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #4e73df;
 }
 .body-padding{
     padding-left: 3rem;
