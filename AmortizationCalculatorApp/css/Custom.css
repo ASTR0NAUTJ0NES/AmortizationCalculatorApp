@@ -63,3 +63,7 @@ p {
 .dangerBg {
     background-color: #e74a3b;
 }
+.title-text {
+    font-size: 6rem;
+    color: #4e73df;
+}
